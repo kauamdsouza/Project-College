@@ -1,97 +1,292 @@
-
 * {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
 }
 
-:host {
-    display: block;
-    min-height: 100vh;
+html,
+body {
+  width: 100%;
+  min-height: 100%;
 }
 
-.header {
-    height: 70px;
-    width: 100%;
+body {
+  font-family: Arial, Helvetica, sans-serif;
 
-    background: #1f2937;
+  background: #0b0d10;
+  color: #ffffff;
 
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-
-    padding: 0 50px;
+  min-height: 100vh;
+  overflow-x: hidden;
 }
 
-.logo {
-    color: white;
-    font-size: 24px;
-    font-weight: bold;
+.cabecalho {
+  width: 100%;
+  height: 90px;
+
+  padding: 0 clamp(30px, 8vw, 130px);
+
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+
+  background: #050608;
+
+  border-bottom: 1px solid #20252c;
 }
 
-nav {
-    display: flex;
-    gap: 30px;
+.cabecalho h1 {
+  color: #ffffff;
+
+  font-size: clamp(20px, 1.6vw, 25px);
+  font-weight: 600;
 }
 
-nav a {
-    color: white;
-    text-decoration: none;
-    font-size: 16px;
+.cabecalho p {
+  color: #b8bec7;
 
-    transition: 0.3s;
+  font-size: clamp(14px, 1vw, 16px);
 }
 
-nav a:hover {
-    color: #60a5fa;
-}
+.capa {
+  width: 100%;
+  min-height: calc(100vh - 180px);
 
-.home {
-    min-height: calc(100vh - 70px);
+  display: flex;
+  align-items: center;
+  justify-content: center;
 
-    display: flex;
-    justify-content: center;
-    align-items: center;
+  background: #101318;
 
-    background: #f4f6f8;
+  padding: 40px 20px;
 
-    text-align: center;
+  padding-bottom: 120px;
 }
 
 .conteudo {
-    max-width: 700px;
+  width: min(900px, 85%);
+
+  text-align: center;
 }
 
-.conteudo h1 {
-    font-size: 48px;
-    color: #1f2937;
+.disciplina {
+  margin-bottom: 18px;
+
+  color: #bfc6cf;
+
+  font-size: clamp(11px, 0.9vw, 14px);
+  font-weight: bold;
+
+  letter-spacing: 3px;
+}
+
+.conteudo h2 {
+  margin-bottom: 22px;
+
+  color: #ffffff;
+
+  font-size: clamp(32px, 4vw, 50px);
+
+  font-weight: 600;
+
+  line-height: 1.15;
+}
+
+.conteudo h2 span {
+  color: #d5d7da;
+}
+
+.descricao {
+  width: min(650px, 100%);
+
+  margin: 0 auto 40px;
+
+  color: #9da4ad;
+
+  font-size: clamp(14px, 1.2vw, 18px);
+
+  line-height: 1.6;
+}
+
+.informacoes {
+  width: 100%;
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  gap: clamp(25px, 5vw, 65px);
+
+  padding-top: 25px;
+
+  border-top: 1px solid #292e35;
+}
+
+.informacoes p {
+  color: #9da4ad;
+
+  font-size: clamp(13px, 1vw, 15px);
+
+  white-space: nowrap;
+}
+
+.informacoes strong {
+  color: #ffffff;
+}
+
+.banner {
+  position: fixed;
+
+  left: 0;
+  bottom: 0;
+
+  width: 100%;
+  height: 90px;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  background: lab(1.63% 0.02 -0.85);
+
+  border-top: 1px solid #000000;
+
+  z-index: 1000;
+}
+
+.banner img {
+  width: 210px;
+  height: 65px;
+
+  display: block;
+
+  object-fit: contain;
+}
+
+@media (max-width: 800px) {
+
+  .cabecalho {
+    height: 75px;
+
+    padding: 0 25px;
+  }
+
+  .capa {
+    min-height: calc(100vh - 150px);
+
+    padding: 35px 20px;
+    padding-bottom: 110px;
+  }
+
+  .conteudo {
+    width: 90%;
+  }
+
+  .informacoes {
+    gap: 25px;
+  }
+
+  .banner {
+    height: 75px;
+  }
+
+  .banner img {
+    width: 190px;
+    height: 55px;
+  }
+}
+
+@media (max-width: 600px) {
+
+  .cabecalho {
+    height: 70px;
+
+    padding: 0 20px;
+  }
+
+  .cabecalho h1 {
+    font-size: 18px;
+  }
+
+  .cabecalho p {
+    font-size: 13px;
+  }
+
+  .capa {
+    min-height: calc(100vh - 140px);
+
+    padding: 35px 20px;
+    padding-bottom: 100px;
+  }
+
+  .conteudo {
+    width: 94%;
+  }
+
+  .conteudo h2 {
+    font-size: 32px;
+  }
+
+  .descricao {
+    font-size: 15px;
+  }
+
+  .informacoes {
+    flex-direction: column;
+
+    gap: 12px;
+
+    padding-top: 20px;
+  }
+
+  .informacoes p {
+    white-space: normal;
+  }
+
+  .banner {
+    height: 70px;
+  }
+
+  .banner img {
+    width: 175px;
+    height: 50px;
+  }
+}
+
+@media (max-height: 700px) and (min-width: 601px) {
+
+  .cabecalho {
+    height: 70px;
+  }
+
+  .capa {
+    min-height: calc(100vh - 160px);
+
+    padding-top: 20px;
+    padding-bottom: 100px;
+  }
+
+  .disciplina {
+    margin-bottom: 10px;
+  }
+
+  .conteudo h2 {
+    margin-bottom: 12px;
+  }
+
+  .descricao {
     margin-bottom: 20px;
-}
+  }
 
-.conteudo p {
-    font-size: 20px;
-    color: #6b7280;
-    margin-bottom: 30px;
-}
+  .informacoes {
+    padding-top: 15px;
+  }
 
-button {
-    border: none;
-    background: #2563eb;
-    color: white;
+  .banner {
+    height: 80px;
+  }
 
-    padding: 14px 35px;
-
-    border-radius: 8px;
-
-    font-size: 16px;
-    font-weight: bold;
-
-    cursor: pointer;
-
-    transition: 0.3s;
-}
-
-button:hover {
-    background: #1d4ed8;
-    transform: translateY(-2px);
+  .banner img {
+    height: 55px;
+  }
 }
