@@ -1,0 +1,30 @@
+.return {
+  position: relative;
+  z-index: 3;
+
+  margin-top: 50px;
+  padding: 8px 30px;
+
+  border: 1px solid #ffffff;
+  border-radius: 10px;
+
+  background-color: #000000;
+  color: rgb(34, 163, 66);
+
+  cursor: pointer;
+  pointer-events: auto;
+
+  font-size: 16px;
+  transition:
+    background-color 0.3s ease,
+    color 0.3s ease,
+    transform 0.2s ease;
+}
+
+.return:hover {
+  background-color: #09fd1d;
+  color: #000000;
+  transform: scale(1.05);
+}
+
+
