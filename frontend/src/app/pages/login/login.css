@@ -1,30 +1,227 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  }
+
+body {
+min-height: 100vh;
+background:
+radial-gradient(circle at 50% 20%, #3a101d 0%, #18080e 40%, #070507 80%);
+color: #fff;
+font-family: "Segoe UI", Arial, sans-serif;
+}
+
+.pagina-amor {
+min-height: 100vh;
+padding: 35px 7% 80px;
+position: relative;
+overflow: hidden;
+}
+
+/* BOTÃO VOLTAR */
+
 .return {
-  position: relative;
-  z-index: 3;
-
-  margin-top: 50px;
-  padding: 8px 30px;
-
-  border: 1px solid #ffffff;
-  border-radius: 10px;
-
-  background-color: #000000;
-  color: rgb(34, 163, 66);
-
-  cursor: pointer;
-  pointer-events: auto;
-
-  font-size: 16px;
-  transition:
-    background-color 0.3s ease,
-    color 0.3s ease,
-    transform 0.2s ease;
+position: relative;
+z-index: 5;
+border: 1px solid rgba(210, 112, 135, 0.5);
+background: rgba(80, 20, 32, 0.35);
+color: #ead9dc;
+padding: 11px 20px;
+border-radius: 30px;
+font-size: 13px;
+cursor: pointer;
+transition: 0.3s ease;
+backdrop-filter: blur(8px);
 }
 
 .return:hover {
-  background-color: #09fd1d;
-  color: #000000;
-  transform: scale(1.05);
+background: rgba(150, 45, 68, 0.45);
+border-color: #d87a91;
+transform: translateX(-3px);
 }
 
+/* INTRODUÇÃO */
 
+.introducao {
+max-width: 850px;
+margin: 65px auto 70px;
+text-align: center;
+}
+
+.pequeno {
+color: #c8788c;
+font-size: 11px;
+letter-spacing: 5px;
+margin-bottom: 25px;
+}
+
+.introducao h1 {
+font-family: Georgia, "Times New Roman", serif;
+font-size: clamp(40px, 6vw, 70px);
+font-weight: 400;
+line-height: 1.1;
+}
+
+.introducao h1 span {
+display: block;
+color: #d8869a;
+font-style: italic;
+margin-top: 8px;
+}
+
+.mensagem {
+max-width: 650px;
+margin: 30px auto 0;
+color: #cdb9bd;
+font-size: 16px;
+line-height: 1.8;
+font-weight: 300;
+}
+
+.coracao {
+margin-top: 25px;
+color: #d65f7b;
+font-size: 25px;
+text-shadow: 0 0 25px rgba(214, 95, 123, 0.7);
+animation: pulsar 2s infinite;
+}
+
+/* FOTOS */
+
+.fotos {
+max-width: 1050px;
+margin: auto;
+display: grid;
+grid-template-columns: repeat(2, 1fr);
+gap: 30px;
+}
+
+.foto {
+position: relative;
+height: 380px;
+overflow: hidden;
+border-radius: 18px;
+background: #16080d;
+border: 1px solid rgba(210, 112, 135, 0.25);
+box-shadow: 0 20px 60px rgba(0, 0, 0, 0.35);
+transition: 0.4s ease;
+}
+
+.foto:hover {
+transform: translateY(-8px);
+border-color: rgba(215, 121, 145, 0.65);
+box-shadow:
+0 25px 70px rgba(0, 0, 0, 0.5),
+0 0 35px rgba(170, 50, 75, 0.12);
+}
+
+.foto img {
+width: 100%;
+height: 100%;
+object-fit: cover;
+display: block;
+transition: 0.6s ease;
+}
+
+.foto:hover img {
+transform: scale(1.05);
+}
+
+.foto::after {
+content: "";
+position: absolute;
+inset: 0;
+background: linear-gradient(
+to top,
+rgba(5, 3, 5, 0.9),
+rgba(5, 3, 5, 0.05) 60%
+);
+pointer-events: none;
+}
+
+.foto-legenda {
+position: absolute;
+bottom: 25px;
+left: 28px;
+right: 28px;
+z-index: 2;
+}
+
+.foto-legenda span {
+color: #d47b90;
+font-family: Georgia, serif;
+font-size: 13px;
+}
+
+.foto-legenda p {
+margin-top: 5px;
+font-family: Georgia, serif;
+font-size: 19px;
+color: #fff;
+}
+
+/* FINAL */
+
+.final {
+text-align: center;
+margin-top: 75px;
+font-family: Georgia, serif;
+}
+
+.final p {
+color: #bca8ad;
+font-size: 17px;
+font-style: italic;
+}
+
+.final span {
+display: block;
+margin-top: 12px;
+color: #d45c78;
+font-size: 24px;
+}
+
+/* ANIMAÇÃO */
+
+@keyframes pulsar {
+0%, 100% {
+transform: scale(1);
+}
+
+50% {
+transform: scale(1.2);
+}
+}
+
+/* RESPONSIVO */
+
+@media (max-width: 700px) {
+
+.pagina-amor {
+padding: 25px 20px 60px;
+}
+
+.introducao {
+margin-top: 55px;
+margin-bottom: 50px;
+}
+
+.pequeno {
+font-size: 9px;
+letter-spacing: 3px;
+}
+
+.mensagem {
+font-size: 14px;
+}
+
+.fotos {
+grid-template-columns: 1fr;
+gap: 20px;
+}
+
+.foto {
+height: 350px;
+}
+}
